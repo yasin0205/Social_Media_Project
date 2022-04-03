@@ -5,6 +5,7 @@ from App_Login.forms import CreateNewUser
 from django.contrib.auth.forms import AuthenticationForm
 
 from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth.decorators import login_required
 
 from App_Login.models import UserProfile
 
@@ -33,3 +34,7 @@ def login_page(request):
                 login(request,user)
                 pass
     return render(request, 'App_Login/login.html', context={'title': 'Login', 'form':form})
+
+@login_required
+def edit_profile(request):
+    pass
