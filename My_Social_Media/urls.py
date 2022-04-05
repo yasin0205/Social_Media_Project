@@ -2,6 +2,7 @@ from django.contrib import admin
 from django.urls import path, include
 
 from App_Posts import views
+
 # for media files
 from django.conf import settings
 from django.contrib.staticfiles.urls import static,staticfiles_urlpatterns

@@ -9,3 +9,7 @@ class UserProfile(models.Model):
     website = models.URLField(blank=True)
     facebook = models.URLField(blank=True)
 
+class Follow(models.Model):
+    follower = models.ForeignKey(User, on_delete=models.CASCADE, related_name='follower')
+    follow = models.ForeignKey(User, on_delete=models.CASCADE, related_name='following')
+    created_date = models.DateTimeField(auto_now_add=True)
